@@ -1,22 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="10dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/article_thumbnail_imageview"
-        android:layout_width="35sp"
-        android:layout_height="wrap_content" />
+    <data>
 
-    <TextView
-        android:id="@+id/article_headline_textview"
-        android:layout_width="wrap_content"
+        <variable
+            name="viewModel"
+            type="com.monzo.androidtest.articles.ui.list.ArticleItemViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="3dp"
-        android:fontFamily="sans-serif-regular"
-        android:textColor="@color/black" />
-</LinearLayout>
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?selectableItemBackground"
+        android:onClick="@{() -> viewModel.onClick()}">
+
+        <ImageView
+            android:id="@+id/article_thumbnail_imageview"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            app:isRounded="@{viewModel.rounded}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:thumbnail="@{viewModel.thumbnail}" />
+
+        <TextView
+            android:id="@+id/article_headline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="sans-serif-regular"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@{viewModel.title}"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/article_thumbnail_imageview"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Article headline" />
+
+        <TextView
+            android:id="@+id/article_headline_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="sans-serif-regular"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="@{viewModel.date}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/article_headline"
+            app:layout_constraintStart_toStartOf="@id/article_headline"
+            app:layout_constraintTop_toBottomOf="@id/article_headline"
+            tools:text="04/02/1990" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

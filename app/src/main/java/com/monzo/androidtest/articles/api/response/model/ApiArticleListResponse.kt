@@ -1,4 +1,4 @@
-package com.monzo.androidtest.api.model
+package com.monzo.androidtest.articles.api.response.model
 
 data class ApiArticleListResponse(val response: ApiArticleList)
 

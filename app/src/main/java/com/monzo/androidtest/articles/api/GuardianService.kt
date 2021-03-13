@@ -1,7 +1,7 @@
-package com.monzo.androidtest.api
+package com.monzo.androidtest.articles.api
 
-import com.monzo.androidtest.api.model.ApiArticle
-import com.monzo.androidtest.api.model.ApiArticleListResponse
+import com.monzo.androidtest.articles.api.response.model.ApiArticle
+import com.monzo.androidtest.articles.api.response.model.ApiArticleListResponse
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

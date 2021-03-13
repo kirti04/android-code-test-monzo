@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">The Guardian</string>
+    <string name="menu_article_fav">Choose favourite</string>
 </resources>

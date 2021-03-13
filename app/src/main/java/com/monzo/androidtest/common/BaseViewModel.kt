@@ -10,7 +10,6 @@ abstract class BaseViewModel<S : Any>(initialState: S) : ViewModel() {
     protected val disposables: CompositeDisposable = CompositeDisposable()
 
     private val _state: MutableLiveData<S> = MutableLiveData(initialState)
-
     val state: LiveData<S> get() = _state
 
     @MainThread
