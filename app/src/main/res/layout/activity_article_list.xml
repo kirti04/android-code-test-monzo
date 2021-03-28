@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.monzo.androidtest.articles.ui.list.ArticlesViewModel" />
+            type="com.monzo.articles.ui.list.ArticlesViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
